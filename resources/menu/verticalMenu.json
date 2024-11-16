@@ -1,0 +1,31 @@
+{
+  "menu": [
+    {
+      "url": "/admin/dashboard",
+      "name": "Dashboards",
+      "icon": "menu-icon tf-icons mdi mdi-home-outline",
+      "slug": "dashboard"
+    },
+    {
+      "menuHeader": "Admin Setting"
+    },
+    {
+      "url": "/admin/setting/user/management",
+      "name": "User Setting",
+      "icon": "menu-icon tf-icons mdi mdi-account-outline",
+      "slug": "app-chat"
+    },
+    {
+      "url": "/admin/setting/product/management",
+      "name": "Product Setting",
+      "icon": "menu-icon tf-icons mdi mdi-calendar-blank-outline",
+      "slug": "app-calendar"
+    },
+    {
+      "url": "/admin/setting/normal/management",
+      "name": "Normal Setting",
+      "icon": "menu-icon tf-icons mdi mdi-window-maximize",
+      "slug": "app-calendar"
+    }
+  ]
+}
