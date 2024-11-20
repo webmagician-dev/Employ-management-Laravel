@@ -31,9 +31,5 @@
     .btn {
         text-transform: none !important;
     }
-
-    .bg-menu-theme {
-      background-color: #fff !important;
-    }
 </style>
 <!--/ Footer-->
