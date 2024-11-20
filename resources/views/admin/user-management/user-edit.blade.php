@@ -17,7 +17,7 @@
                     <label for="username" class="form-label">Username</label>
                     <div class="input-group">
                         <input type="text" class="form-control @error('username') is-invalid @enderror" id="username"
-                            name="username" placeholder="Enter your username" aria-describedby="username" required
+                            name="username" placeholder="Enter your username" aria-describedby="username"
                             value="{{ $user->user->name }}">
                     </div>
                     @error('username')
@@ -32,7 +32,7 @@
                     <div class="input-group">
                         <input disabled type="email" class="form-control @error('email') is-invalid @enderror"
                             id="email" name="email" placeholder="Enter your email address" aria-describedby="email"
-                            required value="{{ $user->user->email }}">
+                            value="{{ $user->user->email }}">
                     </div>
                     @error('email')
                         <div class="text-danger pt-1">
@@ -45,7 +45,7 @@
                     <label for="gender" class="form-label">Gender</label>
                     <div class="">
                         <select class="form-select @error('gender') is-invalid @enderror" id="gender" name="gender"
-                            aria-label="Select Gender" required>
+                            aria-label="Select Gender">
                             <option value="male" @selected($user->user->gender == 'male')>Male</option>
                             <option value="female" @selected($user->user->gender == 'female')>Female</option>
                         </select>
@@ -57,9 +57,10 @@
                     @enderror
                 </div>
 
-                <p class="text-info pt-0 mt-0">To update your password, enter a new one below. If not, leave the password field blank.</p>
+                <p class="text-info pt-0 mt-0">To update your password, enter a new one below. If not, leave the password
+                    field blank.</p>
                 <div class="mb-3">
-                    <label for="password" class="form-label">Password</label> 
+                    <label for="password" class="form-label">Password</label>
                     <div class="input-group">
                         <input type="password" class="form-control @error('password') is-invalid @enderror" id="password"
                             name="password" placeholder="Enter a strong password (min. 8 characters)"
@@ -95,7 +96,7 @@
                     <label for="phone" class="form-label">Phone</label>
                     <div class="input-group">
                         <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone"
-                            name="phone" placeholder="Enter your phone number" aria-describedby="phone" required
+                            name="phone" placeholder="Enter your phone number" aria-describedby="phone"
                             value="{{ $user->user->phone }}">
                     </div>
                     @error('phone')
@@ -109,7 +110,7 @@
                     <label for="address" class="form-label">Address</label>
                     <div class="input-group">
                         <input type="text" class="form-control @error('address') is-invalid @enderror" id="address"
-                            name="address" placeholder="Enter your full address" aria-describedby="address" required
+                            name="address" placeholder="Enter your full address" aria-describedby="address"
                             value="{{ $user->address }}">
                     </div>
                     @error('address')
@@ -123,7 +124,7 @@
                     <label for="status" class="form-label">User status</label>
                     <div class="">
                         <select class="form-select @error('status') is-invalid @enderror" id="status" name="status"
-                            aria-label="Select User Status" required>
+                            aria-label="Select User Status">
                             <option value="active" @selected($user->user->status == 'active')>Active</option>
                             <option value="suspend" @selected($user->user->status == 'suspend')>Suspend</option>
                         </select>

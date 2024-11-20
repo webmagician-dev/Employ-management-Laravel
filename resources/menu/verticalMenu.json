@@ -13,19 +13,19 @@
       "url": "/admin/setting/user/management",
       "name": "Users",
       "icon": "menu-icon tf-icons mdi mdi-account-outline",
-      "slug": "app-chat"
+      "slug": "user-management"
     },
     {
       "url": "/admin/setting/product/management",
       "name": "Product Setting",
       "icon": "menu-icon tf-icons mdi mdi-calendar-blank-outline",
-      "slug": "app-calendar"
+      "slug": "product-management"
     },
     {
       "url": "/admin/setting/normal/management",
       "name": "Normal Setting",
       "icon": "menu-icon tf-icons mdi mdi-window-maximize",
-      "slug": "app-calendar"
+      "slug": "normal-management"
     }
   ]
 }

@@ -50,20 +50,14 @@
     </div>
     <!-- /Search -->
     <ul class="navbar-nav flex-row align-items-center ms-auto">
-
-        <!-- Place this tag where you want the button to render. -->
-        <li class="nav-item lh-1 me-3">
-            <a class="github-button"
-                href="https://github.com/themeselection/materio-bootstrap-html-laravel-admin-template-free"
-                data-icon="octicon-star" data-size="large" data-show-count="true"
-                aria-label="Star themeselection/materio-bootstrap-html-laravel-admin-template-free on GitHub">Star</a>
-        </li>
-
         <!-- User -->
         <li class="nav-item navbar-dropdown dropdown-user dropdown">
             <a class="nav-link dropdown-toggle hide-arrow p-0" href="javascript:void(0);" data-bs-toggle="dropdown">
-                <div class="avatar avatar-online">
-                    <img src="{{ asset('assets/img/avatars/1.png') }}" alt class="w-px-40 h-auto rounded-circle">
+                <div class="avatar-wrapper">
+                    <div class="avatar avatar-md me-3 avatar-online">
+                        <span
+                            class="avatar-initial rounded-circle bg-label-success border-2">{{ Auth::user()->name[0] }}</span>
+                    </div>
                 </div>
             </a>
             <ul class="dropdown-menu dropdown-menu-end mt-3 py-2">
@@ -71,13 +65,15 @@
                     <a class="dropdown-item pb-2 mb-1" href="javascript:void(0);">
                         <div class="d-flex align-items-center">
                             <div class="flex-shrink-0 me-2 pe-1">
-                                <div class="avatar avatar-online">
-                                    <img src="{{ asset('assets/img/avatars/1.png') }}" alt
-                                        class="w-px-40 h-auto rounded-circle">
+                                <div class="avatar-wrapper">
+                                    <div class="avatar avatar-md avatar-online">
+                                        <span
+                                            class="avatar-initial rounded-circle bg-label-success border-2">{{ Auth::user()->name[0] }}</span>
+                                    </div>
                                 </div>
                             </div>
                             <div class="flex-grow-1">
-                                <h6 class="mb-0">John Doe</h6>
+                                <h6 class="mb-0">{{ Auth::user()->name }}</h6>
                                 <small class="text-muted">Admin</small>
                             </div>
                         </div>
