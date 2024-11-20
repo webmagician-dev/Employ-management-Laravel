@@ -18,27 +18,29 @@ class LoginBasic extends Controller
 
   public function login(Request $request)
   {
-    $validator = $request->validate([
-      'email' => 'required',
+    $validatedData = $request->validate([
+      'email' => 'required|email',
       'password' => 'required',
     ]);
 
-    $user = User::where('email', $request->input('email'))->firstOrFail();
+    $user = User::where('email', $validatedData['email'])->first();
 
-    if (!$user || $user->status === 'suspended') {
-      $validator['emailPassword'] = 'Your account is suspended. Please contact support.';
-      return redirect('/')->withErrors($validator);
+    if (!$user) {
+      return redirect('/')->withErrors(['error' => 'This email is not registered.'])->withInput();
+    } 
+
+    if ($user->status === 'suspended') {
+      return redirect('/')->withErrors(['email' => 'Your account is suspended. Please contact support.'])->withInput();
     }
 
     $user->latest_login = now();
     $user->save();
 
-    $credentials = $request->only('email', 'password');
+    $credentials = $validatedData;
 
     if (Auth::attempt($credentials)) {
       return redirect('/admin/dashboard')->withSuccess('Signed in');
     }
-    $validator['emailPassword'] = 'Email address or password is incorrect.';
-    return redirect('/')->withErrors($validator);
+    return redirect('/')->withErrors(['error' => 'Email address or password is incorrect.'])->withInput();
   }
 }

@@ -9,7 +9,11 @@ use App\Models\User;
 class UserInfo extends Model
 {
   use HasFactory;
-  protected $fillable = ['user_id', 'addresss', 'avatar'];
+  protected $fillable = ['user_id', 'address', 'avatar'];
+
+  protected $attributes = [
+    'avatar' => null,
+  ];
 
   public function user()
   {

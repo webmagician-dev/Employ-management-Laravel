@@ -41,26 +41,19 @@ class UserManagement extends Controller
     //Validate the form data
     $request->validate([
       'username' => 'required|string|max:255',
-      'email' => 'required|email|unique:users,email',
+      'email' => 'required|email',
       'password' => 'required|string|min:6|confirmed',
-      'phone' => 'nullable|string|max:15',
+      'phone' => 'required|string',
       'gender' => 'required',
-      'address' => 'nullable|string|max:255',
-      'file' => 'nullable|file|mimes:jpg,jpeg,png,gif',
+      'address' => 'required|string|max:255',
     ]);
 
-    // Process file upload if there is a file
-    if ($request->hasFile('file')) {
-      $file = $request->file('file');
-
-      if ($file->isValid()) {
-        $fileName = time() . '.' . $file->getClientOriginalExtension();
-        $filePath = $file->storeAs('uploads/users', $fileName, 'public');
-      } else {
-        echo 'Fail';
-      }
-    }
     // Save user data to the database
+    $existingUser = User::where('email', $request->input('email'))->first();
+    if ($existingUser) {
+      return redirect()->route('user-add')->withErrors(['email' => 'Email already exists.']);
+    }
+
     $user = new User();
     $user->name = $request->input('username');
     $user->email = $request->input('email');
@@ -72,10 +65,8 @@ class UserManagement extends Controller
     $user->save();
 
     $userinfo = new UserInfo();
-
     $userinfo->user_id = $user->id;
     $userinfo->address = $request->input('address');
-    $userinfo->avatar = $filePath; // Save the file path
     $userinfo->save();
     // Redirect with success message
     return redirect('/admin/setting/user/management')->with('success', 'User created successfully!');
@@ -89,42 +80,38 @@ class UserManagement extends Controller
 
   public function update(Request $request)
   {
-    $request->validate([
+    $validatedData = [
       'username' => 'required|string|max:255',
-      'password' => 'required|string|min:6|confirmed',
       'phone' => 'nullable|string|max:15',
       'gender' => 'required',
       'address' => 'nullable|string|max:255',
-      'file' => 'nullable|file|mimes:jpg,jpeg,png,gif',
-    ]);
+    ];
+
+    // var_dump($request->all());
+    // exit;
+
+    if ($request->filled('password')) {
+      $validatedData['password'] = 'required|string|min:6|confirmed';
+    }
+
+    $request->validate($validatedData);
 
     // Retrieve the user by ID
     $userinfo = UserInfo::findOrFail($request->input('userid'));
-    // Update user data
-    $userinfo->user->name = $request->input('username');
-    $userinfo->user->gender = $request->input('gender');
-    $userinfo->user->phone = $request->input('phone');
+    $user = User::findOrFail($userinfo->user_id);
+    $user->name = $request->input('username');
+    $user->gender = $request->input('gender');
+    $user->phone = $request->input('phone');
+    $user->status = $request->input('status');
     // Check if a new password is provided and update it
     if ($request->filled('password')) {
-      $userinfo->user->password = Hash::make($request->input('password'));
+      $user->password = Hash::make($request->input('password'));
     }
+    $user->save();
 
-    if ($request->hasFile('file')) {
-      // Delete the old file if it exists
-      if ($userinfo->avatar) {
-        Storage::disk('public')->delete($userinfo->avatar);
-      }
-
-      // Store the new file and update the avatar field
-      $filePath = $request->file('file')->store('uploads/users', 'public');
-      $userinfo->avatar = $filePath;
-    }
     $userinfo->address = $request->input('address');
-
-    // Save the updated user information
     $userinfo->save();
 
-    // Redirect to the user settings page with a success message
     return redirect('/admin/setting/user/management')->with('success', 'Profile updated successfully!');
   }
 
