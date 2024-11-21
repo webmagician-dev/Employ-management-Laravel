@@ -39,7 +39,7 @@ class LoginBasic extends Controller
     $credentials = $validatedData;
 
     if (Auth::attempt($credentials)) {
-      return redirect('/admin/dashboard')->withSuccess('Signed in');
+      return redirect('/admin/setting/user/management')->withSuccess('Signed in');
     }
     return redirect('/')->withErrors(['error' => 'Email address or password is incorrect.'])->withInput();
   }

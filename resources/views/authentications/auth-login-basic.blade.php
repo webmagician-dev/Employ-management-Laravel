@@ -25,8 +25,8 @@
                     <!-- /Logo -->
 
                     <div class="card-body mt-2">
-                        <h4 class="mb-2">Welcome to {{ config('variables.templateName') }}! 👋</h4>
-                        <p class="mb-4">Please sign-in to your account and start the adventure</p>
+                        <h4 class="mb-2">{{ config('variables.templateName') }}へようこそ! 👋</h4>
+                        <p class="mb-4">アカウントにサインインして冒険を始めましょう</p>
 
                         @error('error')
                             <div class="alert alert-danger alert-dismissible fade show" role="alert">
