@@ -13,7 +13,7 @@
     <table class="table">
       <thead class="table-light">
         <tr>
-          <th>いいえ</th>
+          <th>番号</th>
           <th>アバター</th>
           <th>製品名</th>
           <th>価格</th>
