@@ -6,18 +6,18 @@
 <input type="hidden" id="deleteId" value="">
 <div class="card">
   <div class="card-header flex items-center justify-between">
-    <h3 class="pt-3">Product Management</h3>
-    <a href="{{route('product-add')}}" class="btn btn-info waves-effect waves-light">Add</a>
+    <h3 class="pt-3">製品管理</h3>
+    <a href="{{route('product-add')}}" class="btn btn-info waves-effect waves-light">追加</a>
   </div>
   <div class="table-responsive text-nowrap">
     <table class="table">
       <thead class="table-light">
         <tr>
-          <th>No</th>
-          <th>Avatar</th>
-          <th>ProductName</th>
-          <th>Price</th>
-          <th>Actions</th>
+          <th>いいえ</th>
+          <th>アバター</th>
+          <th>製品名</th>
+          <th>価格</th>
+          <th>アクション</th>
         </tr>
       </thead>
 
