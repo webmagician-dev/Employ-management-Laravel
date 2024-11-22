@@ -1,26 +1,26 @@
 @extends('layouts/contentNavbarLayout')
 
-@section('title', 'User Management')
+@section('title', 'ユーザー管理')
 
 @section('content')
     <input type="hidden" id="deleteId" value="">
     <div class="card">
         <div class="card-header flex items-center justify-between">
-            <h3 class="pt-3">User Management</h3>
+            <h3 class="pt-3">ユーザー管理</h3>
             <a href="{{ route('user-add') }}" class="btn btn-info waves-effect waves-light"><i class="mdi mdi-plus"></i> &nbsp;
-                Add New User</a>
+                新規ユーザーの追加</a>
         </div>
         <div class="table-responsive text-nowrap">
             <table class="table">
                 <thead class="table-light">
                     <tr>
-                        <th>No</th>
-                        <th>Username</th>
-                        <th>Gender</th>
-                        <th>Phone</th>
-                        <th>Address</th>
-                        <th>Status</th>
-                        <th>Actions</th>
+                        <th>番号</th>
+                        <th>ユーザー名</th>
+                        <th>性別</th>
+                        <th>電話番号</th>
+                        <th>住所</th>
+                        <th>ステータス</th>
+                        <th>アクション</th>
                     </tr>
                 </thead>
 
@@ -83,15 +83,15 @@
         <div class="modal-dialog  modal-dialog-centered">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="deleteModalLabel">Confirm Delete</h5>
+                    <h5 class="modal-title" id="deleteModalLabel">削除の確認</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    Are you sure you want to delete this item?
+                    このアイテムを削除してもよろしいですか?
                 </div>
                 <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                    <button type="submit" class="btn btn-danger" onclick="deleteOk()">Delete</button>
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">キャンセル</button>
+                    <button type="submit" class="btn btn-danger" onclick="deleteOk()">削除</button>
                 </div>
             </div>
         </div>

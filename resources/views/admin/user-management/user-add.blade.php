@@ -5,7 +5,7 @@
 @section('content')
     <div class="col-md-12">
         <div class="card mb-4">
-            <h5 class="card-header"><a href="{{ route('user-management') }}">User Management</a> / Add New User</h5>
+            <h5 class="card-header"><a href="{{ route('user-management') }}">ユーザー管理</a> / 新規ユーザーの追加</h5>
 
             <form action="{{ route('user-save') }}" method="POST" enctype="multipart/form-data"
                 class="card-body demo-vertical-spacing demo-only-element">
@@ -117,8 +117,8 @@
                 </div>
 
                 <div class="d-flex flex-row justify-content-end align-items-center gap-3">
-                    <button type="submit" class="btn btn-info waves-effect waves-light">Save</button>
-                    <a href="{{ route('user-management') }}" class="btn btn-danger waves-effect waves-light">Cancel</a>
+                    <button type="submit" class="btn btn-info waves-effect waves-light">保存</button>
+                    <a href="{{ route('user-management') }}" class="btn btn-danger waves-effect waves-light">キャンセル</a>
                 </div>
             </form>
         </div>

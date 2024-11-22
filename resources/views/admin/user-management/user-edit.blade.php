@@ -1,11 +1,11 @@
 @extends('layouts/contentNavbarLayout')
 
-@section('title', 'Edit User')
+@section('title', 'ユーザーの編集')
 
 @section('content')
     <div class="col-md-12">
         <div class="card mb-4">
-            <h5 class="card-header"><a href="{{ route('user-management') }}">User Management</a> / Edit User</h5>
+            <h5 class="card-header"><a href="{{ route('user-management') }}">ユーザー管理</a> / ユーザーの編集</h5>
 
             <form action="{{ route('user-update') }}" method="POST" enctype="multipart/form-data"
                 class="card-body demo-vertical-spacing demo-only-element">
@@ -137,8 +137,8 @@
                 </div>
 
                 <div class="d-flex flex-row justify-content-end align-items-center gap-3">
-                    <button type="submit" class="btn btn-info waves-effect waves-light">Update</button>
-                    <a href="{{ route('user-management') }}" class="btn btn-danger waves-effect waves-light">Cancel</a>
+                    <button type="submit" class="btn btn-info waves-effect waves-light">更新</button>
+                    <a href="{{ route('user-management') }}" class="btn btn-danger waves-effect waves-light">キャンセル</a>
                 </div>
             </form>
         </div>
