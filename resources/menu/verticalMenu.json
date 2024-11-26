@@ -1,31 +1,25 @@
 {
   "menu": [
     {
-      "url": "/admin/dashboard",
-      "name": "Dashboards",
-      "icon": "menu-icon tf-icons mdi mdi-home-outline",
-      "slug": "dashboard"
-    },
-    {
-      "menuHeader": "Admin Setting"
+      "menuHeader": "管理者設定" 
     },
     {
       "url": "/admin/setting/user/management",
-      "name": "User Setting",
+      "name": "ユーザー", 
       "icon": "menu-icon tf-icons mdi mdi-account-outline",
-      "slug": "app-chat"
+      "slug": "user-management"
     },
     {
       "url": "/admin/setting/product/management",
-      "name": "Product Setting",
+      "name": "商品設定", 
       "icon": "menu-icon tf-icons mdi mdi-calendar-blank-outline",
-      "slug": "app-calendar"
+      "slug": "product-management"
     },
     {
       "url": "/admin/setting/normal/management",
-      "name": "Normal Setting",
+      "name": "通常設定", 
       "icon": "menu-icon tf-icons mdi mdi-window-maximize",
-      "slug": "app-calendar"
+      "slug": "normal-management"
     }
   ]
 }

@@ -5,7 +5,7 @@
 @section('content')
 <div class="col-md-12">
     <div class="card mb-4">
-      <h5 class="card-header"><a href="{{route('product-management')}}">Product Management</a> / Product Edit</h5>
+      <h5 class="card-header"><a href="{{route('product-management')}}">製品管理 </a> / 製品編集</h5>
       
       <form action="{{ route('product-update') }}" method="POST" enctype="multipart/form-data" class="card-body demo-vertical-spacing demo-only-element">
         @csrf
