@@ -14,10 +14,10 @@
                 <input type="hidden" id="userid" name="userid" value="{{ $user->id }}">
 
                 <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
+                    <label for="username" class="form-label">ユーザー名</label>
                     <div class="input-group">
                         <input type="text" class="form-control @error('username') is-invalid @enderror" id="username"
-                            name="username" placeholder="Enter your username" aria-describedby="username"
+                            name="username" placeholder="ユーザー名を入力してください" aria-describedby="username"
                             value="{{ $user->user->name }}">
                     </div>
                     @error('username')
@@ -28,10 +28,10 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
+                    <label for="email" class="form-label">メール</label>
                     <div class="input-group">
                         <input disabled type="email" class="form-control @error('email') is-invalid @enderror"
-                            id="email" name="email" placeholder="Enter your email address" aria-describedby="email"
+                            id="email" name="email" placeholder="メールアドレスを入力してください" aria-describedby="email"
                             value="{{ $user->user->email }}">
                     </div>
                     @error('email')
@@ -42,12 +42,12 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="gender" class="form-label">Gender</label>
+                    <label for="gender" class="form-label">性別</label>
                     <div class="">
                         <select class="form-select @error('gender') is-invalid @enderror" id="gender" name="gender"
-                            aria-label="Select Gender">
-                            <option value="male" @selected($user->user->gender == 'male')>Male</option>
-                            <option value="female" @selected($user->user->gender == 'female')>Female</option>
+                            aria-label="性別を選択">
+                            <option value="male" @selected($user->user->gender == 'male')>男性</option>
+                            <option value="female" @selected($user->user->gender == 'female')>女性</option>
                         </select>
                     </div>
                     @error('gender')
@@ -57,14 +57,13 @@
                     @enderror
                 </div>
 
-                <p class="text-info pt-0 mt-0">To update your password, enter a new one below. If not, leave the password
-                    field blank.</p>
+                <p class="text-info pt-0 mt-0">パスワードを更新するには、以下に新しいパスワードを入力してください。更新しない場合は、パスワード フィールドを空白のままにしてください。</p>
                 <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
+                    <label for="password" class="form-label">パスワード</label>
                     <div class="input-group">
                         <input type="password" class="form-control @error('password') is-invalid @enderror" id="password"
-                            name="password" placeholder="Enter a strong password (min. 8 characters)"
-                            aria-describedby="password" autocomplete="off">
+                            name="password" placeholder="強力なパスワードを入力してください（最低8文字）" aria-describedby="password"
+                            autocomplete="off">
                         <span class="input-group-text cursor-pointer" onclick="togglePasswordVisibility('password')"><i
                                 class="mdi mdi-eye-off-outline"></i></span>
                     </div>
@@ -76,10 +75,10 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="confirm-password" class="form-label">Confirm Password</label>
+                    <label for="confirm-password" class="form-label">パスワードを認証する</label>
                     <div class="input-group">
                         <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror"
-                            id="confirm-password" name="password_confirmation" placeholder="Re-enter your password"
+                            id="confirm-password" name="password_confirmation" placeholder="パスワードを再入力してください"
                             aria-describedby="confirm-password" autocomplete="off">
                         <span class="input-group-text cursor-pointer"
                             onclick="togglePasswordVisibility('confirm-password')"><i
@@ -93,10 +92,10 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="phone" class="form-label">Phone</label>
+                    <label for="phone" class="form-label">電話</label>
                     <div class="input-group">
                         <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone"
-                            name="phone" placeholder="Enter your phone number" aria-describedby="phone"
+                            name="phone" placeholder="電話番号を入力してください" aria-describedby="phone"
                             value="{{ $user->user->phone }}">
                     </div>
                     @error('phone')
@@ -107,10 +106,10 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="address" class="form-label">Address</label>
+                    <label for="address" class="form-label">住所</label>
                     <div class="input-group">
                         <input type="text" class="form-control @error('address') is-invalid @enderror" id="address"
-                            name="address" placeholder="Enter your full address" aria-describedby="address"
+                            name="address" placeholder="住所を入力してください" aria-describedby="address"
                             value="{{ $user->address }}">
                     </div>
                     @error('address')
@@ -121,12 +120,12 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="status" class="form-label">User status</label>
+                    <label for="status" class="form-label">ユーザーステータス</label>
                     <div class="">
                         <select class="form-select @error('status') is-invalid @enderror" id="status" name="status"
-                            aria-label="Select User Status">
-                            <option value="active" @selected($user->user->status == 'active')>Active</option>
-                            <option value="suspend" @selected($user->user->status == 'suspend')>Suspend</option>
+                            aria-label="ユーザーステータスを選択">
+                            <option value="active" @selected($user->user->status == 'active')>アクティブ</option>
+                            <option value="suspend" @selected($user->user->status == 'suspend')>つるす</option>
                         </select>
                     </div>
                     @error('status')
