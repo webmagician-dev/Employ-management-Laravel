@@ -39,9 +39,9 @@
                             @csrf
                             <div class="form-floating form-floating-outline mb-3">
                                 <input type="text" class="form-control @error('email') is-invalid @enderror"
-                                    id="email" name="email" placeholder="Enter your email" autofocus
+                                    id="email" name="email" placeholder="メールアドレスを入力してください" autofocus
                                     value="{{ old('email') ?? '' }}">
-                                <label for="email">Email</label>
+                                <label for="email">メール</label>
                                 @error('email')
                                     <div class="text-danger pt-1">
                                         {{ $message }}
@@ -56,7 +56,7 @@
                                                 class="form-control @error('password') is-invalid @enderror" name="password"
                                                 placeholder="&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;&#xb7;"
                                                 aria-describedby="password" value="{{ old('password') ?? '' }}">
-                                            <label for="password">Password</label>
+                                            <label for="password">パスワード</label>
                                         </div>
                                         <span class="input-group-text cursor-pointer"><i
                                                 class="mdi mdi-eye-off-outline"></i></span>
@@ -70,18 +70,18 @@
                             </div>
                             <div class="mb-3 d-flex justify-content-between">
                                 <a href="{{ url('auth/forgot-password-basic') }}" class="float-end mb-1">
-                                    <span>Forgot Password?</span>
+                                    <span>パスワードをお忘れですか？</span>
                                 </a>
                             </div>
                             <div class="mb-3">
-                                <button class="btn btn-primary d-grid w-100" type="submit">Sign in</button>
+                                <button class="btn btn-primary d-grid w-100" type="submit">ログイン</button>
                             </div>
                         </form>
 
                         <p class="text-center">
-                            <span>New on our platform?</span>
+                            <span>当社のプラットフォームは初めてですか?</span>
                             <a href="{{ url('auth/register-basic') }}">
-                                <span>Create an account</span>
+                                <span>アカウントを作成する</span>
                             </a>
                         </p>
                     </div>

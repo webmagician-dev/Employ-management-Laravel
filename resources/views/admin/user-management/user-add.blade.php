@@ -12,10 +12,10 @@
                 @csrf
 
                 <div class="mb-3">
-                    <label for="username" class="form-label">Username</label>
+                    <label for="username" class="form-label">ユーザー名</label>
                     <div class="input-group">
                         <input type="text" class="form-control @error('username') is-invalid @enderror" id="username"
-                            name="username" placeholder="Enter your username" aria-describedby="username"
+                            name="username" placeholder="ユーザー名を入力してください" aria-describedby="username"
                             value="{{ old('username') }}">
                     </div>
                     @error('username')
@@ -26,10 +26,10 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="email" class="form-label">Email</label>
+                    <label for="email" class="form-label">メール</label>
                     <div class="input-group">
                         <input type="email" class="form-control @error('email') is-invalid @enderror" id="email"
-                            name="email" placeholder="Enter your email address" aria-describedby="email"
+                            name="email" placeholder="メールアドレスを入力してください" aria-describedby="email"
                             value="{{ old('email') }}">
                     </div>
                     @error('email')
@@ -40,12 +40,12 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="gender" class="form-label">Gender</label>
+                    <label for="gender" class="form-label">性別</label>
                     <div class="">
                         <select class="form-select @error('gender') is-invalid @enderror" id="gender" name="gender"
-                            aria-label="Select Gender">
-                            <option value="male" selected>Male</option>
-                            <option value="female">Female</option>
+                            aria-label="性別を選択">
+                            <option value="male" selected>男性</option>
+                            <option value="female">女性</option>
                         </select>
                     </div>
                     @error('gender')
@@ -56,11 +56,10 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="password" class="form-label">Password</label>
+                    <label for="password" class="form-label">パスワード</label>
                     <div class="input-group">
                         <input type="password" class="form-control @error('password') is-invalid @enderror" id="password"
-                            name="password" placeholder="Enter a strong password (min. 8 characters)"
-                            aria-describedby="password">
+                            name="password" placeholder="強力なパスワードを入力してください（最低8文字）" aria-describedby="password">
                         <span class="input-group-text cursor-pointer" onclick="togglePasswordVisibility('password')"><i
                                 class="mdi mdi-eye-off-outline"></i></span>
                     </div>
@@ -72,10 +71,10 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="confirm-password" class="form-label">Confirm Password</label>
+                    <label for="confirm-password" class="form-label">パスワードを認証する</label>
                     <div class="input-group">
                         <input type="password" class="form-control @error('password_confirmation') is-invalid @enderror"
-                            id="confirm-password" name="password_confirmation" placeholder="Re-enter your password"
+                            id="confirm-password" name="password_confirmation" placeholder="パスワードを再入力してください"
                             aria-describedby="confirm-password">
                         <span class="input-group-text cursor-pointer"
                             onclick="togglePasswordVisibility('confirm-password')"><i
@@ -89,11 +88,10 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="phone" class="form-label">Phone</label>
+                    <label for="phone" class="form-label">電話</label>
                     <div class="input-group">
                         <input type="text" class="form-control @error('phone') is-invalid @enderror" id="phone"
-                            name="phone" placeholder="Enter your phone number" aria-describedby="phone"
-                            value="{{ old('phone') }}">
+                            name="phone" placeholder="電話番号を入力してください" aria-describedby="phone" value="{{ old('phone') }}">
                     </div>
                     @error('phone')
                         <div class="text-danger pt-1">
@@ -103,10 +101,10 @@
                 </div>
 
                 <div class="mb-3">
-                    <label for="address" class="form-label">Address</label>
+                    <label for="address" class="form-label">住所</label>
                     <div class="input-group">
                         <input type="text" class="form-control @error('address') is-invalid @enderror" id="address"
-                            name="address" placeholder="Enter your full address" aria-describedby="address"
+                            name="address" placeholder="住所を入力してください" aria-describedby="address"
                             value="{{ old('address') }}">
                     </div>
                     @error('address')
